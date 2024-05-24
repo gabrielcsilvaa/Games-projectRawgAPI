@@ -1,0 +1,204 @@
+#logo {
+    max-width: 50px;
+    width: 100%;
+}
+
+img {
+    max-width: 150px;
+    width: 100%;
+}
+.x{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+}
+.formimg {
+    width: 100%;
+    height: 210px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.textformat {
+    display: -webkit-box;
+    -webkit-line-clamp: 9;
+    /** número de linhas que você quer exibir */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-body,
+.nopadding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.card {
+    background: transparent;
+}
+
+.lista {
+    list-style: none;
+}
+
+.lista li::before {
+    font-family: FontAwesome;
+    float: left;
+    margin-left: -1.3em;
+    content: "\f04d";
+    color: #070707;
+    transform: scale(1, 1);
+    position: absolute;
+    margin-top: 2px;
+}
+#logo p { 
+    margin-left: 100px; 
+}
+.editores {
+    font-size: 1.1rem;
+    list-style: none;
+}
+
+.editores li {
+    padding: 10px 0;
+}
+
+.editores li::before {
+    font-family: FontAwesome;
+    float: left;
+    margin-left: -1.3em;
+    content: "\f007";
+    color: #070707;
+    transform: scale(1.5, 1.5);
+    position: absolute;
+    margin-top: 2px;
+}
+
+.redsocial>a {
+    font-size: 30px;
+}
+
+.redsocial>a:nth-child(3) {
+    margin: 0 20px;
+}
+
+.plataformas {
+    clear: both;
+}
+
+.publishers {
+    clear: both;
+}
+
+div.small-video>div[class="col-3"] {
+    padding: 5px 10px;
+}
+
+.bi-plus {
+    font-size: 20px;
+    color: white;
+}
+
+.margin {
+    margin: 0 !important;
+}
+
+.color {
+    background-color: #FFF;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: #656565;
+}
+
+.descricao {
+    line-height: 1.2;
+    font-size: 14px;
+}
+
+.espaco {
+    margin-left: 20px;
+}
+
+.copyright {
+    margin: 0 !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+div.card-body p.card-text {
+    margin-bottom: 0 !important;
+}
+
+
+textarea:focus,
+input:focus,
+select:focus {
+    box-shadow: 0 0 0 0 !important;
+}
+
+input {
+    width: auto !important;
+}
+
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+    #nopading {
+        padding: 10px 0 !important;
+    }
+
+    .barra {
+        display: none;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    footer {
+        text-align: center !important;
+    }
+
+    footer div.text-end {
+        text-align: center !important;
+        padding-top: 15px;
+    }
+
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    .descricao>p {
+        margin-bottom: 8px;
+    }
+
+    .descricao {
+        font-size: 13px;
+    }
+}
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* XX-Large devices (larger desktops) */
+/* No media query since the xxl breakpoint has no upper bound on its width */
