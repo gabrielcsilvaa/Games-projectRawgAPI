@@ -1,154 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+    
 <head>
-    <link rel="stylesheet" type="text/css" href="index.css"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Games
-        
-    </title>
+    <title>Portal de Games</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" media="screen"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../Games-projectRawgAPI/assets/css/style.css">
-
-    
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-    
-    <header class="bg-light">
-        <nav class="navbar navbar-expand-lg px-3">
-            <div class="container-fluid nopadding">
-                <a class="navbar-brand" id="logo" href="#">
-                    <div class="card-img d-flex justify-content-center">
-                        <p>teste</p>
-                    </div>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+<header class="bg-light">
+    <nav class="navbar navbar-expand-lg px-3">
+        <div class="container-fluid nopadding">
+            <a class="navbar-brand" id="logo" href="#">
+                <div class="card-img d-flex justify-content-center">
+                    <p>Projeto teste</p>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-2 mb-2 mb-lg-0">
-                        
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#lancamentos">lançamentos</a>
-                        </li>
-                        <li class="nav-item pt-2 barra">|</li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#plataformas">plataformas</a>
-                        </li>
-                    </ul>
-                    <form class="input-group-append d-flex" role="search">
-                        <div class="input-group">
-                            <span class="input-group-text border border-opacity-75 color" id="basic-addon1"><i
-                                    class="bi bi-search"></i></span>
-                            <input type="text" class="form-control border border-start-0 border-end-0 border-opacity-75"
-                                placeholder="Pesquisar games" aria-label="Username" aria-describedby="basic-addon1">
-                            <span class="input-group-text border border-opacity-75 color" id="basic-addon1" onchange="searchGames();"><i
-                                    class="bi bi-x-circle"></i></span>
-                        </div>
-                    </form>
-                </div>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#lancamentos">Lançamentos</a>
+                    </li>
+                    <li class="nav-item pt-2 barra">|</li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#plataformas">Plataformas</a>
+                    </li>
+                </ul>
+                <form class="input-group-append d-flex" role="search" onsubmit="searchGames(); return false;">
+                    <div class="input-group">
+                        <span class="input-group-text border border-opacity-75 color" id="basic-addon1"><i
+                                class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border border-start-0 border-end-0 border-opacity-75"
+                               placeholder="Pesquisar games" aria-label="Pesquisar games" aria-describedby="basic-addon1"
+                               id="searchInput">
+                        <span class="input-group-text border border-opacity-75 color" id="basic-addon2"
+                              onclick="clearSearch();"><i class="bi bi-x-circle"></i></span>
+                    </div>
+                </form>
             </div>
-        </nav>
-    </header>
-    
-    <section class="container lancamentos pt-2">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid nopadding">
-                <a class="navbar-brand" id="lancamentos">
-                    <h2>Lançamentos</h2>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        </div>
+    </nav>
+</header>
+
+<section class="container lancamentos pt-2">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid nopadding">
+            <a class="navbar-brand" id="lancamentos">
+                <h2>Lançamentos</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                     aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarScroll">
-                    <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: px;">
-                        <li class="nav-item dropdown border border-dark rounded ">
-                            <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Ordem: Popularity
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown border border-dark rounded ms-4">
-                            <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Genero: TODOS
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="row small-video" id="cards">
-            <!-- aqui estao sendo gerados os cards -->
-        </div>
-        <div class="float-end py-4">
-            <div class="input-group d-flex">
-                <div class="input-group">
-                    <span class="input-group-text bg-secondary border-0" id="basic-addon1"><i
-                            class="bi bi-plus"></i></span>
-                    <button type="button" class="btn btn-secondary" id="btn-0">Carregar mais lançamentos</button>
-                </div>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarScroll">
+                <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item dropdown border border-dark rounded">
+                        <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Ordem: Popularity
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Ação</a></li>
+                            <li><a class="dropdown-item" href="#">Outros tipos</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Todos os Jogos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown border border-dark rounded ms-4">
+                        <a class="nav-link dropdown-toggle me-5" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Gênero: TODOS
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Ação</a></li>
+                            <li><a class="dropdown-item" href="#">Outros Tipos</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Todos os Jogos</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
-    <section class="container plataformas pt-2">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid nopadding">
-                <a class="navbar-brand" id="plataformas">
-                    <h2>Plataformas</h2>
-                </a>
-            </div>
-        </nav>
-        <div class="row small-video" id="plata">
-            <!-- aqui estao sendo gerados as plataformas -->
-        </div>
-        <div class="float-end py-4">
-            <div class="input-group d-flex">
-                <div class="input-group">
-                    <span class="input-group-text bg-secondary border-0" id="basic-addon1"><i
-                            class="bi bi-plus"></i></span>
-                    <button type="button" class="btn btn-secondary" id="btn-1">Carregar mais plataformas</button>
-                </div>
+    </nav>
+    <div class="row small-video" id="cards">
+        <!-- Aqui serão gerados os cards dos jogos -->
+    </div>
+    <div class="float-end py-4">
+        <div class="input-group d-flex">
+            <div class="input-group">
+                <span class="input-group-text bg-secondary border-0" id="basic-addon1"><i
+                        class="bi bi-plus"></i></span>
+                <button type="button" class="btn btn-secondary" id="btn-0">Carregar mais lançamentos</button>
             </div>
         </div>
-    </section>
-    <script>
-        
-    </script>
-    <script src="../Games-projectRawgAPI/assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-        crossorigin="anonymous"></script>
+    </div>
+</section>
 
+<section class="container plataformas pt-2">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid nopadding">
+            <a class="navbar-brand" id="plataformas">
+                <h2>Plataformas</h2>
+            </a>
+        </div>
+    </nav>
+    <div class="row small-video" id="plata">
+        <!-- Aqui serão geradas as plataformas -->
+    </div>
+    <div class="float-end py-4">
+        <div class="input-group d-flex">
+            <div class="input-group">
+                <span class="input-group-text bg-secondary border-0" id="basic-addon1"><i
+                        class="bi bi-plus"></i></span>
+                <button type="button" class="btn btn-secondary" id="btn-1">Carregar mais plataformas</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
 </body>
-
 </html>
